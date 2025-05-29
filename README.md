@@ -103,4 +103,4 @@ Indian Council of Agricultural Research (ICAR)
 Government of India Open Data APIs
 
 Farmers who inspire innovation every day 🌾
-Made with love for Farmers!!
+Made with love for our Farmer!!
