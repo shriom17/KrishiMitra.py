@@ -250,7 +250,7 @@ def set_bg_local(image_file):
     )
 
 # Call the function with the correct file path
-set_bg_local("C:/Users/DELL/Downloads/crop_image.jfif")
+set_bg_local("crop_image.jfif")
 # ------------------ Task Selection ------------------
 st.subheader("📋 Task for Today")
 tasks = ["Irrigation", "Apply pesticide to paddy", "Harvest tomatoes"]
