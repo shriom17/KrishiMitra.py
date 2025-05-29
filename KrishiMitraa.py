@@ -233,24 +233,24 @@ mandi_data = {
 st.table(mandi_data)
 # Place this right after your imports and before any UI code
 
-def set_bg_from_file(image_file):
-    with open(image_file, "rb") as f:
-        data = f.read()
-        encoded = base64.b64encode(data).decode()
-        css = f"""
+def set_bg_from_url(image_url):
+    st.markdown(
+        f"""
         <style>
         .stApp {{
-            background-image: url("data:image/jpg;base64,{encoded}");
+            background-image: url("{image_url}");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
         }}
         </style>
-        """
-        st.markdown(css, unsafe_allow_html=True)
+        """,
+        unsafe_allow_html=True
+    )
 
-# Call this at the top of your app
-set_bg_from_file("/mnt/data/crop_image.jfif")
+# Example usage:
+set_bg_from_url("https://ibb.co/n4w8k5F")
+
 
 # ------------------ Task Selection ------------------
 st.subheader("📋 Task for Today")
