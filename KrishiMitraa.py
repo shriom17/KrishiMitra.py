@@ -250,8 +250,8 @@ def set_bg_local(image_file):
         unsafe_allow_html=True
     )
 
-# Call the function with the correct file path
-set_bg_local("crop_image.jfif")
+# ✅ Use raw string to avoid unicode escape errors
+set_bg_local(r"C:\Users\DELL\Downloads\crop_image.jfif")
 # ------------------ Task Selection ------------------
 st.subheader("📋 Task for Today")
 tasks = ["Irrigation", "Apply pesticide to paddy", "Harvest tomatoes"]
