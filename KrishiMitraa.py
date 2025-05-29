@@ -238,10 +238,8 @@ def set_bg_from_url(image_url):
         f"""
         <style>
         .stApp {{
-            background-image: url("{https:/ibb.co/n4w8k5F}");
+            background-image: url("{image_url}");
             background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
         }}
         </style>
         """,
