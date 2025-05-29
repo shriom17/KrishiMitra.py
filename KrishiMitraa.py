@@ -233,12 +233,12 @@ mandi_data = {
 st.table(mandi_data)
 # Place this right after your imports and before any UI code
 
-def set_bg_from_url(image_url):
+def set_bg_from_url(https://ibb.co/n4w8k5F):
     st.markdown(
         f"""
         <style>
         .stApp {{
-            background-image: url("{image_url}");
+            background-image: url("{https://ibb.co/n4w8k5F}");
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
