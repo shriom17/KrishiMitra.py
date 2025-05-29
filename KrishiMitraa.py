@@ -234,7 +234,7 @@ st.table(mandi_data)
 # Place this right after your imports and before any UI code
 
 def set_bg_local(image_file):
-    with open(image_file, "rb") as file:
+    with open(r"C:\Users\DELL\Downloads\python\KrishiMitra.py\crop_image.jfif", "rb") as file:
         encoded = base64.b64encode(file.read()).decode()
     st.markdown(
         f"""
