@@ -233,7 +233,6 @@ mandi_data = {
 st.table(mandi_data)
 # Place this right after your imports and before any UI code
 
-
 def set_bg_local(image_file):
     with open(image_file, "rb") as file:
         encoded = base64.b64encode(file.read()).decode()
@@ -250,8 +249,7 @@ def set_bg_local(image_file):
         unsafe_allow_html=True
     )
 
-# ✅ Use raw string to avoid unicode escape errors
-set_bg_local(r"C:\Users\DELL\Downloads\crop_image.jfif")
+set_bg_local("crop_image.jfif")  # Your background image file
 # ------------------ Task Selection ------------------
 st.subheader("📋 Task for Today")
 tasks = ["Irrigation", "Apply pesticide to paddy", "Harvest tomatoes"]
