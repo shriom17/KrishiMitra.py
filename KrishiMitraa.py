@@ -233,8 +233,9 @@ mandi_data = {
 st.table(mandi_data)
 # Place this right after your imports and before any UI code
 
+
 def set_bg_local(image_file):
-    with open(r"C:\Users\DELL\Downloads\python\KrishiMitra.py\crop_image.jfif", "rb") as file:
+    with open(image_file, "rb") as file:
         encoded = base64.b64encode(file.read()).decode()
     st.markdown(
         f"""
@@ -243,12 +244,15 @@ def set_bg_local(image_file):
             background-image: url("data:image/jpg;base64,{encoded}");
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
         }}
         </style>
         """,
         unsafe_allow_html=True
     )
 
+# Call it with correct path
+set_bg_local(r"C:\Users\DELL\OneDrive\Desktop\python\KrishiMitra.py\crop_image.jfif")  #"C:\Users\DELL\OneDrive\Desktop\python\KrishiMitra.py\crop_image.jfif"
  # Your background image file
 # ------------------ Task Selection ------------------
 st.subheader("📋 Task for Today")
