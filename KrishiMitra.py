@@ -169,3 +169,7 @@ st.markdown("---")
 st.markdown("Made with ❤️ for Indian Farmers - KrishiMitra")
 
 
+
+
+
+
