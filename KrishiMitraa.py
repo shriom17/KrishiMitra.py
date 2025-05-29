@@ -249,7 +249,7 @@ def set_bg_local(image_file):
         unsafe_allow_html=True
     )
 
-set_bg_local(r"C:\Users\DELL\Downloads\python\KrishiMitra.py\crop_image.jfif")  # Your background image file
+ # Your background image file
 # ------------------ Task Selection ------------------
 st.subheader("📋 Task for Today")
 tasks = ["Irrigation", "Apply pesticide to paddy", "Harvest tomatoes"]
