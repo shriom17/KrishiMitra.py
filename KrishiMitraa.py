@@ -249,7 +249,7 @@ def set_bg_from_url(image_url):
     )
 
 # Example usage:
-set_bg_from_url("https://ibb.co/n4w8k5F")
+set_bg_from_url("https://ibb.co/n4w8k5F.jpg")
 
 
 # ------------------ Task Selection ------------------
