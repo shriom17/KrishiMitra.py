@@ -233,7 +233,7 @@ mandi_data = {
 st.table(mandi_data)
 # Place this right after your imports and before any UI code
 
-def set_bg_from_url(https:/ibb.co/n4w8k5F):
+def set_bg_from_url(image_url):
     st.markdown(
         f"""
         <style>
