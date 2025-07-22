@@ -39,12 +39,18 @@ gap for rural farmers and help improve productivity and decision-making in agric
   
 KrishiMitra/
 │
-├── assets/               # Crop images or icons
-├── data/                 # JSON files (schemes, prices, translations)
-├── modules/              # Feature-specific Python scripts
-├── krishimitra_app.py    # Main Streamlit app
-├── README.md             # Project documentation
-└── requirements.txt      # Python dependencies
+├── assets/      
+# Crop images or icons
+├── data/           
+# JSON files (schemes, prices, translations)
+├── modules/      
+# Feature-specific Python scripts
+├── krishimitra_app.py 
+# Main Streamlit app
+├── README.md        
+# Project documentation
+└── requirements.txt    
+# Python dependencies
  Tech Stack
 Frontend: Streamlit
 
