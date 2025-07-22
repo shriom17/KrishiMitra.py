@@ -38,19 +38,19 @@ gap for rural farmers and help improve productivity and decision-making in agric
 - Integration of location-based mandi locators and nearest agriculture centers.
   
 KrishiMitra/
-│
-├── assets/      
-# Crop images or icons
+
+├── assets  
+
 ├── data/           
-# JSON files (schemes, prices, translations)
+
 ├── modules/      
-# Feature-specific Python scripts
+
 ├── krishimitra_app.py 
-# Main Streamlit app
+
 ├── README.md        
-# Project documentation
+
 └── requirements.txt    
-# Python dependencies
+
  Tech Stack
 Frontend: Streamlit
 
