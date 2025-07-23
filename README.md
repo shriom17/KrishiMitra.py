@@ -47,9 +47,7 @@ KrishiMitra/
 
 ├── krishimitra_app.py 
 
-├── README.md        
-
-└── requirements.txt    
+├── README.md         
 
  Tech Stack
 Frontend: Streamlit
