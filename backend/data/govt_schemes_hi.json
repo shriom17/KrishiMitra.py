@@ -1,0 +1,26 @@
+{
+  "national_schemes": [
+    {
+      "name": "प्रधानमंत्री किसान सम्मान निधि (पीएम-किसान)",
+      "description": "सभी भूमिधारक किसान परिवारों को प्रति वर्ष ₹6,000 की आय सहायता प्रदान करता है।",
+      "eligibility": "सभी भूमिधारक किसान परिवार।",
+      "link": "https://pmkisan.gov.in/"
+    },
+    {
+      "name": "प्रधानमंत्री फसल बीमा योजना (पीएमएफबीवाई)",
+      "description": "प्राकृतिक आपदाओं, कीटों और बीमारियों के परिणामस्वरूप किसी भी अधिसूचित फसल के खराब होने की स्थिति में किसानों को बीमा कवरेज और वित्तीय सहायता प्रदान करता है।",
+      "eligibility": "अधिसूचित क्षेत्रों में अधिसूचित फसलें उगाने वाले सभी किसान, जिनमें बटाईदार और किरायेदार किसान भी शामिल हैं, कवरेज के लिए पात्र हैं।",
+      "link": "https://pmfby.gov.in/"
+    }
+  ],
+  "state_specific_schemes": {
+    "Rajasthan": [
+      {
+        "name": "मुख्यमंत्री बीज स्वावलंबन योजना",
+        "description": "किसानों को बीज उत्पादन के मामले में आत्मनिर्भर बनाना है।",
+        "eligibility": "राज्य के चयनित समूहों में किसान।",
+        "link": "http://www.agriculture.rajasthan.gov.in/content/agriculture/en/Agriculture-Department-dep/schemes-and-programs1/state-plan/Mukhya-mantri-Beej-Swavalamban-Yojna.html"
+      }
+    ]
+  }
+}
