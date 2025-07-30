@@ -3,6 +3,21 @@ from datetime import datetime
 from gtts import gTTS
 import base64
 import os
+import requests
+
+api_key = '02ed7dfc4ec25aff382c1bb81426ad52'
+
+# ------------------Weather API------------------------
+def get_weather_details(user_input):
+    weather_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=imperial&APPID={api_key}")
+    if weather_data.json()['cod'] == '404':
+        print('No City Found')
+    else:
+        weather = weather_data.json()['weather'][0]['main']
+        temp = round(weather_data.json()['main']['temp'])
+        humidity = weather_data.json()['main']['humidity']
+    
+    return weather, temp, humidity
 
 # ------------------ Utility Function ------------------
 def play_audio(text, lang_code='en'):
@@ -121,7 +136,11 @@ if st.button("Check Eligibility"):
 st.header(lang_content["weather_alert"])
 today = datetime.now().strftime("%d-%m-%Y")
 st.write(f"Today's Date: {today}")
-st.warning("⚠️ Heavy Rain Expected in your region today.")
+user_city = st.text_input('Enter your city')
+if st.button('Check Weather'):
+    weather, temp, humidity = get_weather_details(user_city)
+    st.success(f"Temperature: {temp}\u00B0F , Weather: {weather}  &  Humidity: {humidity}")
+
 
 # ------------------ Crop Calendar ------------------
 st.header(lang_content["crop_calendar"])
