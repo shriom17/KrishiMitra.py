@@ -5,10 +5,29 @@ import pandas as pd
 from gtts import gTTS
 import os
 from streamlit_chat import message
+import streamlit.components.v1 as components
 import openai
 #----------------
 
 openai.api_key = "your-openai-api-key"  # Replace with your key
+
+st.markdown("### 🎙 Voice Assistant (Beta)")
+components.html(
+    """
+    <!DOCTYPE html>
+    <html>
+    <head></head>
+    <body>
+        <script id="omnidimension-web-widget" 
+                async 
+                src="https://backend.omnidim.io/web_widget.js?secret_key=390696f923cb4e49baa4a48c74a8e91e">
+        </script>
+    </body>
+    </html>
+    """,
+    height=600,
+)
+
 
 st.subheader("🧠 Ask KrishiMitra (Chatbot)")
 
