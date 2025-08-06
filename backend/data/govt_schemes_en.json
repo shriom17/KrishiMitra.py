@@ -3,13 +3,18 @@
     {
       "name": "Pradhan Mantri Kisan Samman Nidhi (PM-KISAN)",
       "description": "Provides income support of ₹6,000 per year to all landholding farmer families.",
-      "eligibility": "All landholding farmer families.",
+      "eligibility_criteria": {
+        "min_land_holding_acres": 0.1
+      },
       "link": "https://pmkisan.gov.in/"
     },
     {
       "name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
-      "description": "Provides insurance coverage and financial support to farmers in the event of failure of any of the notified crops as a result of natural calamities, pests & diseases.",
-      "eligibility": "All farmers including sharecroppers and tenant farmers growing notified crops in the notified areas are eligible for coverage.",
+      "description": "Provides insurance coverage and financial support to farmers in the event of crop failure.",
+      "eligibility_criteria": {
+        "is_loanee": true,
+        "grows_notified_crops": true
+      },
       "link": "https://pmfby.gov.in/"
     }
   ],
@@ -18,15 +23,27 @@
       {
         "name": "Mukhyamantri Beej Swavalamban Yojana",
         "description": "Aims to make farmers self-sufficient in terms of seed production.",
-        "eligibility": "Farmers in selected clusters of the state.",
+        "eligibility_criteria": {
+          "min_land_holding_acres": 0.5
+        },
         "link": "http://www.agriculture.rajasthan.gov.in/content/agriculture/en/Agriculture-Department-dep/schemes-and-programs1/state-plan/Mukhya-mantri-Beej-Swavalamban-Yojna.html"
+      },
+      {
+        "name": "Mahila Kisan Sashaktikaran Pariyojana",
+        "description": "Special scheme to empower women in agriculture.",
+        "eligibility_criteria": {
+          "gender": "Female"
+        },
+        "link": "#"
       }
     ],
     "Maharashtra": [
       {
         "name": "Mahatma Jyotirao Phule Shetkari Karjmukti Yojana",
         "description": "A loan waiver scheme for farmers to relieve them of their debt burden.",
-        "eligibility": "Farmers with outstanding loans up to a certain limit, as specified by the government.",
+        "eligibility_criteria": {
+          "is_loanee": true
+        },
         "link": "https://mjpsky.maharashtra.gov.in/"
       }
     ]
