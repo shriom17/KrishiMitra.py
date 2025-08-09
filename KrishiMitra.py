@@ -5,19 +5,20 @@ import base64
 import os
 import requests
 
-api_key = '02ed7dfc4ec25aff382c1bb81426ad52'
+api_key = '02ed7dfc4ec25aff382c1bb81426ad52'  # Replace with your own API key
 
-# ------------------Weather API------------------------
+# ------------------ Weather API ------------------------
 def get_weather_details(user_input):
-    weather_data = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=imperial&APPID={api_key}")
+    weather_data = requests.get(
+        f"https://api.openweathermap.org/data/2.5/weather?q={user_input}&units=imperial&APPID={api_key}"
+    )
     if weather_data.json()['cod'] == '404':
-        print('No City Found')
+        return None, None, None
     else:
         weather = weather_data.json()['weather'][0]['main']
         temp = round(weather_data.json()['main']['temp'])
         humidity = weather_data.json()['main']['humidity']
-    
-    return weather, temp, humidity
+        return weather, temp, humidity
 
 # ------------------ Utility Function ------------------
 def play_audio(text, lang_code='en'):
@@ -96,10 +97,26 @@ LANGUAGE_DATA = {
         "weather_alert": "🌦️ मौसम चेतावनी",
         "crop_calendar": "📅 फसल कैलेंडर",
         "tts_lang": "hi"
+    },
+    "Marathi": {
+        "welcome": "🌾 कृषिमित्र मध्ये तुमचं स्वागत आहे!",
+        "fertilizer": "🌱 खत शिफारस",
+        "loan": "🏦 कर्ज/अनुदान तपासणी",
+        "weather_alert": "🌦️ हवामान इशारा",
+        "crop_calendar": "📅 पीक दिनदर्शिका",
+        "tts_lang": "mr"
+    },
+    "Nepali": {
+        "welcome": "🌾 कृषिमित्रमा तपाईंलाई स्वागत छ!",
+        "fertilizer": "🌱 मल सिफारिस",
+        "loan": "🏦 ऋण/सब्सिडी जाँच",
+        "weather_alert": "🌦️ मौसम पूर्वानुमान",
+        "crop_calendar": "📅 बाली पात्रो",
+        "tts_lang": "ne"
     }
 }
 
-# ------------------ Sidebar for Language ------------------
+# ------------------ Sidebar ------------------
 st.sidebar.title("🌐 Select Language")
 language = st.sidebar.selectbox("Choose your preferred language:", list(LANGUAGE_DATA.keys()))
 lang_content = LANGUAGE_DATA[language]
@@ -109,8 +126,6 @@ st.title(lang_content["welcome"])
 
 if st.button("🔊 Read Aloud"):
     play_audio(lang_content["welcome"], lang_content["tts_lang"])
-
-
 
 # ------------------ Fertilizer Recommendation ------------------
 st.header(lang_content["fertilizer"])
@@ -139,8 +154,10 @@ st.write(f"Today's Date: {today}")
 user_city = st.text_input('Enter your city')
 if st.button('Check Weather'):
     weather, temp, humidity = get_weather_details(user_city)
-    st.success(f"Temperature: {temp}\u00B0F , Weather: {weather}  &  Humidity: {humidity}")
-
+    if weather:
+        st.success(f"Temperature: {temp}\u00B0F , Weather: {weather} & Humidity: {humidity}")
+    else:
+        st.error("City not found. Please check the name.")
 
 # ------------------ Crop Calendar ------------------
 st.header(lang_content["crop_calendar"])
@@ -151,11 +168,9 @@ if st.button("Show Calendar"):
     if st.button("🔊 Listen Calendar"):
         play_audio(calendar, lang_content["tts_lang"])
 
-
-
 # ------------------ Mandi Prices ------------------
-st.subheader(['price_info'])
-mandi_data ={
+st.header("📊 Mandi Prices")
+mandi_data = {
     "wheat": "₹2200/qtl",
     "rice": "₹1800/qtl",
     "mustard": "₹5500/qtl",
@@ -180,15 +195,10 @@ mandi_data ={
     "carrot": "₹1100/qtl",
     "cabbage": "₹850/qtl",
     "peas": "₹1400/qtl"
-
 }
 st.table(mandi_data)
+
 # ------------------ Footer ------------------
 st.markdown("---")
-st.markdown("Made with ❤️ for Indian Farmers - KrishiMitra")
-
-
-
-
-
+st.markdown("Made with ❤️ for Indian Farmers - KrishiMitra 2.0")
 
