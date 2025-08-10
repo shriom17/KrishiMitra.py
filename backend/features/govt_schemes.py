@@ -7,17 +7,25 @@ def load_schemes_data(language: str = 'en'):
     """
     Loads the government schemes data from a language-specific JSON file.
     """
-    filename = f'backend/data/govt_schemes_{language}.json'
-    try:
-        with open(filename, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        print(f"Warning: {filename} not found. Falling back to English.")
+    import os
+    
+    # Try different possible paths for the JSON file
+    possible_paths = [
+        f'backend/data/govt_schemes_{language}.json',
+        f'data/govt_schemes_{language}.json',
+        f'govt_schemes_{language}.json',
+        os.path.join(os.path.dirname(__file__), '..', 'data', f'govt_schemes_{language}.json')
+    ]
+    
+    for filename in possible_paths:
         try:
-            with open('backend/data/govt_schemes_en.json', 'r', encoding='utf-8') as f:
+            with open(filename, 'r', encoding='utf-8') as f:
                 return json.load(f)
         except (FileNotFoundError, json.JSONDecodeError):
-            return {}
+            continue
+    
+    print(f"Warning: govt_schemes_{language}.json not found in any expected location.")
+    return {}
 
 def check_eligibility(scheme: dict, farmer_profile: dict) -> bool:
     """
